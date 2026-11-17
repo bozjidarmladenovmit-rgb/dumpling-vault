@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Страница за пренасочување за СТАРИОТ линк (bozjidarmladenovmit-rgb.github.io/dumpling-vault/).
+     Ја зема колекцијата и кодот за влез од стариот линк и ги носи на новиот, па корисникот не губи ништо.
+     Се става како index.html во ново репо „dumpling-vault“ во личната сметка, ПО преместувањето на апликацијата.
+     NEW подолу е новиот линк. -->
+<html lang="mk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumpling Vault се пресели</title>
+<style>body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0f0d1a; color: #fff; font-family: system-ui, sans-serif; text-align: center; padding: 20px; }
+a { color: #ffd166; font-weight: 700; font-size: 18px; }</style></head>
+<body><h2>Апликацијата се пресели 🚚</h2><p>Те носиме на новиот линк со целата твоја колекција…</p><p><a id="go" href="#">Продолжи</a></p>
+<script>
+var NEW = 'https://nadjasquishytime.github.io/', url = NEW;
+try {
+  var d = { sv: JSON.parse(localStorage.getItem('dumplingVault1') || 'null'), acc: localStorage.getItem('dvAccess') };
+  if (d.sv || d.acc) url = NEW + '#mig=' + btoa(unescape(encodeURIComponent(JSON.stringify(d)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+} catch (e) {}
+document.getElementById('go').href = url;
+if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });   // стариот service worker повеќе не треба
+setTimeout(function () { location.replace(url); }, 600);
+</script></body></html>
