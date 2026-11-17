@@ -3,3 +3,5 @@
 Апликацијата се пресели на https://nadjasquishytime.github.io/
 
 Оваа страница ги пренесува колекциите и кодот за влез од стариот линк на новиот.
+
+Новиот линк: https://nadjasquishytime.github.io/
